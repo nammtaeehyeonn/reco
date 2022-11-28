@@ -2,9 +2,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-
-
-
 def Recommend(title, cos_sim):
     
     title_idx = dict(zip(df['Title'], df.index))
@@ -31,28 +28,14 @@ df = pd.read_csv('book.csv')
 cos_sim = np.load('sim.npy')
 
 ###########################################
-# ui
-###########################################
+# streamlit
 st.title('book')
 
 title = st.text_input("책 제목을 입력해주세요")
 
-
-
-
-# title = df.loc[df['Title'].str.contains(title), 'Title']
-# print(title)
-
-ans = Recommend(title, cos_sim)
-ans.reset_index(drop = True, inplace = True)
-
-# print(ans)
-
 urls = []
 for url in ans:
-#     st.image(url, width = 100)
     urls.append(url)
-
 
 col1, col2, col3, col4, col5 = st.columns(5)
 
@@ -75,10 +58,11 @@ with col4:
 with col5:
     st.header('')
     st.image(urls[4], width = 100)
-    
-    
-# col1 = st.image(urls[0], width = 100)
-# col2 = st.image(urls[1], width = 100)
-# col3 = st.image(urls[2], width = 100)
-# col4 = st.image(urls[3], width = 100)
-# col5 = st.image(urls[4], width = 100)
+
+###########################################
+
+# title = df.loc[df['Title'].str.contains(title), 'Title']
+# print(title)
+
+ans = Recommend(title, cos_sim)
+ans.reset_index(drop = True, inplace = True)
