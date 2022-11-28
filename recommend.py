@@ -38,46 +38,55 @@ if title:
     ans = Recommend(title, cos_sim)
     ans.reset_index(drop = True, inplace = True)
     
-    names = []
-    urls = []
-    deses = []
-    for name, url, des in ans:
-        names.append(name)
-        urls.append(url)
-        deses.append(des)
-        
-    print(names[0], urls[0], deses[0])
+    col1, col2 = st.columns(2)
     
-    
-    col1, col2, col3, col4, col5 = st.columns(5)
-
     with col1:
-        st.header('')
-        st.image(urls[0], width = 100)
-
+    st.header(ans.Title[0])
+    st.image(ans.image[0], width = 100)
+    
     with col2:
-        st.header('')
-        st.image(urls[1], width = 100)
+    st.header(ans.Title[1])
+    st.image(ans.image[1], width = 100)
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+    st.header(ans.Title[0])
+    st.image(ans.image[0], width = 100)
+    
+    with col2:
+    st.header(ans.Title[1])
+    st.image(ans.image[1], width = 100)
+    
+#     col1, col2, col3, col4, col5 = st.columns(5)
 
-    with col3:
-        st.header('')
-        st.image(urls[2], width = 100)
+#     with col1:
+#         st.header('')
+#         st.image(urls[0], width = 100)
 
-    with col4:
-        st.header('')
-        st.image(urls[3], width = 100)
+#     with col2:
+#         st.header('')
+#         st.image(urls[1], width = 100)
 
-    with col5:
-        st.header('')
-        st.image(urls[4], width = 100)
+#     with col3:
+#         st.header('')
+#         st.image(urls[2], width = 100)
+
+#     with col4:
+#         st.header('')
+#         st.image(urls[3], width = 100)
+
+#     with col5:
+#         st.header('')
+#         st.image(urls[4], width = 100)
     
    
-###########################################
+# ###########################################
 
 
 
 
 
-# title = df.loc[df['Title'].str.contains(title), 'Title']
-# print(title)
+# # title = df.loc[df['Title'].str.contains(title), 'Title']
+# # print(title)
 
