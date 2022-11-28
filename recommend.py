@@ -53,11 +53,11 @@ if title:
     col1, col2 = st.columns(2)
     
     with col1:
-        st.write(ans.Title[1])
-        st.image(ans.image[1], width = 200)
+        st.write(ans.Title[0])
+        st.image(ans.image[0], width = 200)
     
     with col2:
-        st.write(ans.description[1])
+        st.write(ans.description[0])
     
 #     col1, col2, col3, col4, col5 = st.columns(5)
 
