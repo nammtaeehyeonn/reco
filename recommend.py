@@ -38,26 +38,16 @@ if title:
     ans = Recommend(title, cos_sim)
     ans.reset_index(drop = True, inplace = True)
     
-    
-    st.subheader(ans.Title[0])
-#     col1 = st.columns(1)
-    
-#     with col1:
-#         st.write(ans.Title[0])
-#         st.image(ans.image[0], width = 200)
-    
-#     with col2:
-#         st.title("")
-#         st.write(ans.description[0])
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-#         st.write(ans.Title[0])
-        st.image(ans.image[0], width = 200)
-    
-    with col2:
-        st.write(ans.description[0])
+    for i in range(5):
+        st.subheader(ans.Title[i])
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.image(ans.image[i], width = 200)
+
+        with col2:
+            st.write(ans.description[i])
     
 #     col1, col2, col3, col4, col5 = st.columns(5)
 
