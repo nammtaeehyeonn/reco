@@ -41,11 +41,11 @@ if title:
     col1, col2 = st.columns(2)
     
     with col1:
-        st.subheader(ans.Title[0])
+        st.title(ans.Title[0])
         st.image(ans.image[0], width = 200)
     
     with col2:
-        st.header("")
+        st.title("")
         st.write(ans.description[0])
     
     col1, col2 = st.columns(2)
