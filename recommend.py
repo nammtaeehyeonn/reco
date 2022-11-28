@@ -50,7 +50,7 @@ ans.reset_index(drop = True, inplace = True)
 
 urls = []
 for url in ans:
-    st.image(url, width = 100)
+#     st.image(url, width = 100)
     urls.append(url)
 
 
