@@ -54,9 +54,31 @@ for url in ans:
     urls.append(url)
 
 
-r1_col1, r1_col2, r1_col3, r1_col4, r1_col5 = st.columns(1,5)
-r1_col1 = st.image(urls[0], width = 100)
-r1_col2 = st.image(urls[1], width = 100)
-r1_col3 = st.image(urls[2], width = 100)
-r1_col4 = st.image(urls[3], width = 100)
-r1_col5 = st.image(urls[4], width = 100)
+col1, col2, col3, col4, col5 = st.columns(5)
+
+with col1:
+    st.header('')
+    st.image(urls[0], width = 100)
+
+with col2:
+    st.header('')
+    st.image(urls[1], width = 100)
+    
+with col3:
+    st.header('')
+    st.image(urls[2], width = 100)
+    
+with col4:
+    st.header('')
+    st.image(urls[3], width = 100)
+    
+with col5:
+    st.header('')
+    st.image(urls[4], width = 100)
+    
+    
+# col1 = st.image(urls[0], width = 100)
+# col2 = st.image(urls[1], width = 100)
+# col3 = st.image(urls[2], width = 100)
+# col4 = st.image(urls[3], width = 100)
+# col5 = st.image(urls[4], width = 100)
