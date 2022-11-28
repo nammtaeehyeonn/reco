@@ -38,11 +38,13 @@ if title:
     ans = Recommend(title, cos_sim)
     ans.reset_index(drop = True, inplace = True)
     
-    col1 = st.columns(1)
     
-    with col1:
-        st.write(ans.Title[0])
-        st.image(ans.image[0], width = 200)
+    st.subheader(ans.Title[0])
+#     col1 = st.columns(1)
+    
+#     with col1:
+#         st.write(ans.Title[0])
+#         st.image(ans.image[0], width = 200)
     
 #     with col2:
 #         st.title("")
