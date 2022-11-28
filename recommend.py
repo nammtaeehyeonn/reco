@@ -1,6 +1,10 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+from googletrans import Translator
+
+trans = Translator()
+
 
 
 def Recommend(title, cos_sim):
@@ -28,6 +32,7 @@ def Recommend(title, cos_sim):
 df = pd.read_csv('book.csv')
 cos_sim = np.load('sim.npy')
 
+
 ############################################ streamlit
 st.title('독서는 마음의 양식')
 
@@ -37,6 +42,9 @@ if title:
     ans = Recommend(title, cos_sim)
     ans.reset_index(drop = True, inplace = True)
     
+    tra = trans.translate(ans.description[0], src = 'en', dest = 'ko')
+    st.text(tra)
+        
     for i in range(5):
         st.subheader(ans.Title[i])
         col1, col2 = st.columns(2)
