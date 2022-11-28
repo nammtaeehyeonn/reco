@@ -55,8 +55,8 @@ for url in ans:
 
 
 r1_col1, r1_col2, r1_col3, r1_col4, r1_col5 = st.columns(5)
-r1_col1.st.image(urls[0], width = 100)
-r1_col2.st.image(urls[1], width = 100)
-r1_col3.st.image(urls[2], width = 100)
-r1_col4.st.image(urls[3], width = 100)
-r1_col5.st.image(urls[4], width = 100)
+r1_col1 = st.image(urls[0], width = 100)
+r1_col2 = st.image(urls[1], width = 100)
+r1_col3 = st.image(urls[2], width = 100)
+r1_col4 = st.image(urls[3], width = 100)
+r1_col5 = st.image(urls[4], width = 100)
