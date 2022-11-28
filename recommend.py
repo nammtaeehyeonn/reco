@@ -27,6 +27,9 @@ def Recommend(title, cos_sim):
 df = pd.read_csv('book.csv')
 cos_sim = np.load('sim.npy')
 
+ans = Recommend(title, cos_sim)
+ans.reset_index(drop = True, inplace = True)
+
 ###########################################
 # streamlit
 st.title('book')
@@ -64,5 +67,3 @@ with col5:
 # title = df.loc[df['Title'].str.contains(title), 'Title']
 # print(title)
 
-ans = Recommend(title, cos_sim)
-ans.reset_index(drop = True, inplace = True)
