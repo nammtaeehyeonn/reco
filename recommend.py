@@ -23,7 +23,7 @@ def Recommend(title, cos_sim):
 
     # 유사도 탑10 제목 가져오기
     # print(sim)                       # (인덱스, 유사도)
-    return df['image'].iloc[rec_idx]
+    return df.iloc[rec_idx]
 
 df = pd.read_csv('book.csv')
 cos_sim = np.load('sim.npy')
@@ -37,11 +37,18 @@ title = st.text_input("책 제목을 입력해주세요")
 if title:
     ans = Recommend(title, cos_sim)
     ans.reset_index(drop = True, inplace = True)
-
+    
+    names = []
     urls = []
-    for url in ans:
+    deses = []
+    for name, url, des in ans:
+        names.append(name)
         urls.append(url)
-
+        deses.append(des)
+        
+    print(names[0], urls[0], deses[0])
+    
+    
     col1, col2, col3, col4, col5 = st.columns(5)
 
     with col1:
