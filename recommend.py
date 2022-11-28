@@ -31,7 +31,7 @@ cos_sim = np.load('sim.npy')
 ############################################ streamlit
 st.title('book')
 
-
+title = st.text_input("책 제목을 입력해주세요")
 
 ans = Recommend(title, cos_sim)
 ans.reset_index(drop = True, inplace = True)
@@ -65,7 +65,7 @@ with col5:
    
 ###########################################
 
-title = st.text_input("책 제목을 입력해주세요")
+
 
 
 
