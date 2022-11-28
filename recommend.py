@@ -45,3 +45,4 @@ if title:
             st.image(ans.image[i], width = 200)
         with col2:
             st.write(ans.description[i][:400] + "   ...")
+        st.header("")
