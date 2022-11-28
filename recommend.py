@@ -67,7 +67,7 @@ def name(title, con_sim):
 ###########################################
 
 title = st.text_input("책 제목을 입력해주세요")
-
+name(title, con_sim)
 
 
 
