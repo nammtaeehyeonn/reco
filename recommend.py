@@ -33,41 +33,39 @@ st.title('book')
 
 
 
-def name(title, con_sim):
-    ans = Recommend(title, cos_sim)
-    ans.reset_index(drop = True, inplace = True)
+ans = Recommend(title, cos_sim)
+ans.reset_index(drop = True, inplace = True)
 
-    urls = []
-    for url in ans:
-        urls.append(url)
+urls = []
+for url in ans:
+    urls.append(url)
 
-    col1, col2, col3, col4, col5 = st.columns(5)
+col1, col2, col3, col4, col5 = st.columns(5)
 
-    with col1:
-        st.header('')
-        st.image(urls[0], width = 100)
+with col1:
+    st.header('')
+    st.image(urls[0], width = 100)
 
-    with col2:
-        st.header('')
-        st.image(urls[1], width = 100)
+with col2:
+    st.header('')
+    st.image(urls[1], width = 100)
 
-    with col3:
-        st.header('')
-        st.image(urls[2], width = 100)
+with col3:
+    st.header('')
+    st.image(urls[2], width = 100)
 
-    with col4:
-        st.header('')
-        st.image(urls[3], width = 100)
+with col4:
+    st.header('')
+    st.image(urls[3], width = 100)
 
-    with col5:
-        st.header('')
-        st.image(urls[4], width = 100)
+with col5:
+    st.header('')
+    st.image(urls[4], width = 100)
     
    
 ###########################################
 
 title = st.text_input("책 제목을 입력해주세요")
-name(title, con_sim)
 
 
 
