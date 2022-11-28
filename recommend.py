@@ -41,22 +41,22 @@ if title:
     col1, col2 = st.columns(2)
     
     with col1:
-    st.header(ans.Title[0])
-    st.image(ans.image[0], width = 100)
+        st.header(ans.Title[0])
+        st.image(ans.image[0], width = 100)
     
     with col2:
-    st.header(ans.Title[1])
-    st.image(ans.image[1], width = 100)
+        st.header(ans.Title[1])
+        st.image(ans.image[1], width = 100)
     
     col1, col2 = st.columns(2)
     
     with col1:
-    st.header(ans.Title[0])
-    st.image(ans.image[0], width = 100)
+        st.header(ans.Title[0])
+        st.image(ans.image[0], width = 100)
     
     with col2:
-    st.header(ans.Title[1])
-    st.image(ans.image[1], width = 100)
+        st.header(ans.Title[1])
+        st.image(ans.image[1], width = 100)
     
 #     col1, col2, col3, col4, col5 = st.columns(5)
 
