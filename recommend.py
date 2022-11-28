@@ -1,11 +1,6 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-from googletrans import Translator
-
-trans = Translator()
-
-
 
 def Recommend(title, cos_sim):
     
@@ -41,9 +36,7 @@ title = st.text_input("책 제목을 입력해주세요")
 if title:
     ans = Recommend(title, cos_sim)
     ans.reset_index(drop = True, inplace = True)
-    
-    tra = trans.translate(ans.description[0], src = 'en', dest = 'ko')
-    st.text(tra)
+   
         
     for i in range(5):
         st.subheader(ans.Title[i])
