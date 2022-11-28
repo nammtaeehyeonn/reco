@@ -33,9 +33,9 @@ cos_sim = np.load('sim.npy')
 ###########################################
 # ui
 ###########################################
-# st.title('book')
+st.title('book')
 
-# title = st.text_input("책 제목을 입력해주세요")
+title = st.text_input("책 제목을 입력해주세요")
 
 
 
@@ -43,18 +43,20 @@ cos_sim = np.load('sim.npy')
 # title = df.loc[df['Title'].str.contains(title), 'Title']
 # print(title)
 
-ans = Recommend('Dramatica for Screenwriters', cos_sim)
+ans = Recommend(title, cos_sim)
 ans.reset_index(drop = True, inplace = True)
 
 # print(ans)
 
-
+urls = []
 for url in ans:
-    # response = requests.get(df1.loc[a.index[i]].image)
-    # img = Image.open(BytesIO(response.content))
-    st.image(url, width = 100)
+#     st.image(url, width = 100)
+    urls.append(url)
 
-    # fig.add_subplot(2, 5, i + 1)
-    # plt.imshow(img)
-    # plt.axis('off')
-    # plt.title(df1.loc[a.index[i]]['Title'])
+
+r1_col1, r1_col2, r1_col3, r1_col4, r1_col5 = st.columns(5)
+book1 = r1_col1.st.image(urls[0], width = 100)
+book2 = r1_col1.st.image(urls[1], width = 100)
+book3 = r1_col1.st.image(urls[2], width = 100)
+book4 = r1_col1.st.image(urls[3], width = 100)
+book5 = r1_col1.st.image(urls[4], width = 100)
