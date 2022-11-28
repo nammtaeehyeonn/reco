@@ -41,7 +41,7 @@ if title:
     col1, col2 = st.columns(2)
     
     with col1:
-        st.write(ans.Title[0])
+        st.subheader(ans.Title[0])
         st.image(ans.image[0], width = 200)
     
     with col2:
