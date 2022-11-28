@@ -45,7 +45,7 @@ if title:
         st.image(ans.image[0], width = 200)
     
     with col2:
-        st.subheader("")
+        st.header("")
         st.write(ans.description[0])
     
     col1, col2 = st.columns(2)
