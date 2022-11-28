@@ -52,7 +52,7 @@ ans.reset_index(drop = True, inplace = True)
 for url in ans:
     # response = requests.get(df1.loc[a.index[i]].image)
     # img = Image.open(BytesIO(response.content))
-    st.image(url, wigth = 100)
+    st.image(url, width = 100)
 
     # fig.add_subplot(2, 5, i + 1)
     # plt.imshow(img)
