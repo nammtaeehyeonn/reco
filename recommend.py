@@ -29,10 +29,9 @@ df = pd.read_csv('book.csv')
 cos_sim = np.load('sim.npy')
 
 ############################################ streamlit
-st.title('book')
+st.title('독서는 마음의 양식')
 
 title = st.text_input("책 제목을 입력해주세요")
-
 
 if title:
     ans = Recommend(title, cos_sim)
@@ -40,44 +39,8 @@ if title:
     
     for i in range(5):
         st.subheader(ans.Title[i])
-
         col1, col2 = st.columns(2)
-
         with col1:
             st.image(ans.image[i], width = 200)
-
         with col2:
-            st.write(ans.description[i][:400] + "...")
-    
-#     col1, col2, col3, col4, col5 = st.columns(5)
-
-#     with col1:
-#         st.header('')
-#         st.image(urls[0], width = 100)
-
-#     with col2:
-#         st.header('')
-#         st.image(urls[1], width = 100)
-
-#     with col3:
-#         st.header('')
-#         st.image(urls[2], width = 100)
-
-#     with col4:
-#         st.header('')
-#         st.image(urls[3], width = 100)
-
-#     with col5:
-#         st.header('')
-#         st.image(urls[4], width = 100)
-    
-   
-# ###########################################
-
-
-
-
-
-# # title = df.loc[df['Title'].str.contains(title), 'Title']
-# # print(title)
-
+            st.write(ans.description[i][:400] + "   ...")
