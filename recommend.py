@@ -27,6 +27,8 @@ def Recommend(title, cos_sim):
 df = pd.read_csv('book.csv')
 cos_sim = np.load('sim.npy')
 
+title = st.text_input("책 제목을 입력해주세요")
+
 ans = Recommend(title, cos_sim)
 ans.reset_index(drop = True, inplace = True)
 
@@ -34,7 +36,6 @@ ans.reset_index(drop = True, inplace = True)
 # streamlit
 st.title('book')
 
-title = st.text_input("책 제목을 입력해주세요")
 
 urls = []
 for url in ans:
