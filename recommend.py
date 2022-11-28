@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-title = st.text_input("책 제목을 입력해주세요")
 
 def Recommend(title, cos_sim):
     
@@ -32,6 +31,7 @@ cos_sim = np.load('sim.npy')
 ############################################ streamlit
 st.title('book')
 
+title = st.text_input("책 제목을 입력해주세요")
 
 
 ans = Recommend(title, cos_sim)
