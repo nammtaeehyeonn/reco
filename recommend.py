@@ -28,6 +28,7 @@ df = pd.read_csv('book.csv')
 cos_sim = np.load('sim.npy')
 ex1 = df.Title.sample(5)
 ex = pd.DataFrame(ex1, columns = ["입력 예시 : 책 제목"])
+
 ############################################ streamlit
 st.title('독서는 마음의 양식')
 
